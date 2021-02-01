@@ -23,4 +23,4 @@ def conv_layer(input, filters,kernel_size,relu=True, bn = True):
 if __name__ == '__main__':
     model = dncnn()
     model.summary()
-    keras.utils.plot_model(model, to_file='models.png', show_shapes=True)
+    keras.utils.plot_model(model, to_file='model.png', show_shapes=True)

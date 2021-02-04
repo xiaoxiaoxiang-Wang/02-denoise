@@ -61,7 +61,8 @@ def generate_test_data(data_path):
     for file in files:
         if file.endswith(".db"):
             continue
-        img = cv2.imread(filename=os.path.join(data_path,file),flags=cv2.IMREAD_COLOR)
+        img = cv2.imread(filename=os.path.join(data_path, file), flags=cv2.IMREAD_GRAYSCALE)
+        # img = cv2.imread(filename=os.path.join(data_path,file),flags=cv2.IMREAD_COLOR)
         img = img/255.0
         noise = np.random.normal(0, sigma / 255.0, img.shape)
         img_scale_noise = img + noise

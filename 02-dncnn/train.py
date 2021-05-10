@@ -13,6 +13,7 @@ model_path = './models/model.h5'
 def mean_squared_error(y_true, y_pred):
     print(y_true,y_pred)
     return K.mean((y_true-y_pred)**2)
+
 def peak_sifnal_to_noise(y_true, y_pred):
     return 10*keras.backend.log(1/mean_squared_error(y_true, y_pred))/math.log(10)
 

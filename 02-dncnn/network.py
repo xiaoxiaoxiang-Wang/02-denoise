@@ -1,7 +1,7 @@
 from tensorflow import keras
 
 def dncnn(channel):
-    input = keras.layers.Input(shape=(None,None,channel),name = 'input')
+    input = keras.layers.Input(shape=(100,100,channel),name = 'input')
     conv = conv_layer(input,64,(3,3),bn=False)
     for i in range(15):
         conv = conv_layer(conv,64,(3,3))
@@ -22,6 +22,8 @@ def conv_layer(input, filters,kernel_size,relu=True, bn = True):
     return layer
 
 if __name__ == '__main__':
-    model = dncnn(1)
+    model = dncnn(3)
+
+    model.layers[0].output_shape
     model.summary()
     keras.utils.plot_model(model, to_file='model.png', show_shapes=True)

@@ -3,4 +3,8 @@
 /**/.idea
 /02-dncnn/*.png
 /02-dncnn/models
+/**/*.png
+/**/*.jpg
+/**/*.h5
+/**/*.hdf5
 

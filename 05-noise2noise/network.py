@@ -24,7 +24,7 @@ def unet(channel):
     deconv1 = keras.layers.concatenate([keras.layers.UpSampling2D(size=(2, 2))(deconv2), input], axis=-1)
     deconv1A = conv_layer(deconv1, 64)
     deconv1B = conv_layer(deconv1A, 32)
-    out = conv_layer(deconv1B, channel)
+    out = conv_layer(deconv1B, channel, bn=False, ac=False)
 
     out = keras.layers.Subtract()([input, out])
     model = keras.models.Model(inputs=input, outputs=out)

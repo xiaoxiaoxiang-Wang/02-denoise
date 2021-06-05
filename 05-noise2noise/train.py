@@ -10,7 +10,7 @@ import data_prepare
 from network import unet
 
 model_dir = './models'
-model_path = './models/model111.h5'
+model_path = './models/model.h5'
 
 
 def mean_squared_error(y_true, y_pred):
@@ -41,7 +41,7 @@ if __name__ == '__main__':
         model = get_model_from_network(1)
 
     # compile the model
-    model.compile(optimizer=Adam(learning_rate=0.0001), loss=['mse'], metrics=[mean_squared_error, peak_sifnal_to_noise])
+    model.compile(optimizer=Adam(learning_rate=0.00001), loss=['mse'], metrics=[mean_squared_error, peak_sifnal_to_noise])
     checkpointer = keras.callbacks.ModelCheckpoint('./models/model_{epoch:03d}.hdf5',
                                                    verbose=1, save_weights_only=False)
 

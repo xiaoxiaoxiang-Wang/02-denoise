@@ -66,6 +66,12 @@ def generate_test_data(data_path):
     y = []
     for file in files:
         img = cv2.imread(filename=os.path.join(data_path, file), flags=cv2.IMREAD_GRAYSCALE)
+        w, h = img.shape
+        while w % 32:
+            w += 1
+        while h % 32:
+            h += 1
+        img = cv2.resize(src=img, dsize=(w, h), interpolation=cv2.IMREAD_GRAYSCALE)
         # img = cv2.imread(filename=os.path.join(data_path,file),flags=cv2.IMREAD_COLOR)
         img = img / 255.0
         noise = np.random.normal(0, sigma / 255.0, img.shape)

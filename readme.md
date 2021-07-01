@@ -14,8 +14,10 @@ dog.png
 first step time cost: 203.54992508888245  
 second step time cost: 239.55721855163574  
 psnr of img and first step img: 31.75813141725017  
-psnr of img and second step img: 31.790544509372616  
-ref：https://github.com/ChihaoZhang/BM3D.git
+psnr of img and second step img: 31.790544509372616
+
+[Image denoising by sparse 3D transform-domain collaborative ltering](https://webpages.tuni.fi/foi/GCF-BM3D/BM3D_TIP_2007.pdf)<br/>
+[code ref](https://github.com/ChihaoZhang/BM3D.git)<br/>
 
 # 02-dncnn
 

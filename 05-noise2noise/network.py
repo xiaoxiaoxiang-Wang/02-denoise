@@ -46,7 +46,6 @@ def conv_layer(input, filters, bn=True, ac=True):
     out = keras.layers.Conv2D(filters=filters, kernel_size=(3, 3), strides=(1, 1),
                               kernel_initializer=keras.initializers.VarianceScaling(scale=1.0, mode='fan_in',
                                                                                     distribution='normal'),
-                              name='213',
                               bias_initializer='zeros',
                               padding='same', use_bias=False)(
         input)
